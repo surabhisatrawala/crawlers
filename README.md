@@ -1,5 +1,5 @@
 
-http://applist.io/
+http://applist.io/latest/
 
 Run "A_craw_main_url.py" to get the url of latest category products of all the pages present in this category and stored in files.
 command - python A_craw_main_url.py
