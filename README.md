@@ -8,3 +8,7 @@ command - python T_Redirect_url.py
 
 Run "T_redirect_to_mainurl.py" it give main url and list of competitors of the particular product.Product whose main urls are not mentioned fetch keyword of that product along with its competitors.
 command - python T_redirect_to_mainurl.py
+
+Run "T_list_cat.py" to get mapping of all the categories present in trustradius website and stored in file named trustradius_mapping.
+command - python T_list_cat.py
+
