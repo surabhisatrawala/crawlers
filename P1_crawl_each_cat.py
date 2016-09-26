@@ -6,9 +6,9 @@ import os
 import sys
 import ssl
 
-def line_from_file(file): 
+def line_from_file(file):
   i=0
-  for line in open(file,'r').readlines():  
+  for line in open(file,'r').readlines():
     i +=1
     print line
     path = line.split('/')[-1] # split the last part of the url
@@ -38,4 +38,4 @@ def soup_func(path,filename,htmltext):
       b.write("https://www.producthunt.com"+data) 
       b.write("\n")
 
-line_from_file('C:/Python27/nytimes/Producthunt_crawl/producthunt_cat.csv') 
+# line_from_file('C:/Python27/nytimes/Producthunt_crawl/producthunt_cat.csv')
