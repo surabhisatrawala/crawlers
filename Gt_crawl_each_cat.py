@@ -6,17 +6,21 @@ import re
 import os
 import sys
 import ssl
+from Gt_redirect_to_mainurl import files_from_dir
 
 def line_from_file(file): 
-  i=0
-  for line in open(file,'r').readlines(): 
-    i +=1
-    print line
-    path = line.split('/')[-2] 
-    path=path.replace("\n", "") 
-    filename = path + '.csv'
-    print filename
-    crawl_data(path,filename,line)
+  os.makedirs("cat") 
+  path="cat"
+  if os.path.exists("cat"):
+    i=0
+    for line in open(file,'r').readlines(): 
+      i +=1
+      print line
+      path1= line.split('/')[-2] # split the last part of line 
+      path1=path1.replace("\n", "") 
+      filename = path1 + '.csv'# make file name based on the category name.
+      print "filename"+filename
+      crawl_data(path,filename,line)
 
 def crawl_data(path,filename,line): 
   print line
@@ -29,13 +33,16 @@ def crawl_data(path,filename,line):
   req = urllib2.Request(line,headers=hdr)
   htmltext = urllib2.urlopen(req).read()
   soup_func(path,filename,htmltext)
+  
+
 
 def soup_func(path,filename,htmltext): 
-  with open(filename ,'w') as b:
+  with open(os.path.join(path, filename), 'w') as b: # open file in cat directory to write data in it. 
     soup = BeautifulSoup(htmltext,"html.parser")
-    for tag in soup.find_all('a',attrs={"class" : "evnt","data-evac":"ua_facet","data-evca":"ua_facet_categories","data-evla":"ua_serp"}):
-      data=tag['href']
+    for tag in soup.find_all('a',attrs={"class" : "evnt","data-evac":"ua_facet","data-evca":"ua_facet_categories","data-evla":"ua_serp"}):# fetch all the urls of each category
+      data=tag['href'] 
       print data
       b.write("https://www.getapp.com"+data) 
       b.write("\n")
 
+  # files_from_dir("C:/Python27/nytimes/getapp1/cat")     
