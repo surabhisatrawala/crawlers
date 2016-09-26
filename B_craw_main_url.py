@@ -29,6 +29,6 @@ def crawl_main_url(line,path,filename):
 		 	b.write("https://betalist.com"+a)
 		 	b.write("\n")
 
-line_from_file("C:/Python27/nytimes/Beta_list/Betalistcat_crawl.txt")	# crawl betalistcat_crawl file contain market and region category	 	
+line_from_file("C:/Python27/nytimes/Beta_list/MainPage_crawl.txt")	# crawl MainPage_crawl file contain market and region category	 	
 		
 	
