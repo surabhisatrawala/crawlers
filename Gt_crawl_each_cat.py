@@ -39,4 +39,3 @@ def soup_func(path,filename,htmltext):
       b.write("https://www.getapp.com"+data) 
       b.write("\n")
 
-line_from_file('C:/Python27/nytimes/getapp1/getapp.csv') 
