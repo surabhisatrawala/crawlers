@@ -1,6 +1,6 @@
 https://www.getapp.com/browse
 
-Run Gt_crawl_main_url.py which is used to fetch all the categories present in getapp website and store in file name getapp.csv.After that line from file function were called which cral each category of getapp file automatically and stored it in file name corresponding to their category name.
+Run Gt_crawl_main_url.py which is used to fetch all the categories present in getapp website and store in file name getapp.csv.After that line from file function were called which crawl each category of getapp file automatically and stored it in file name corresponding to their category name.All files were stored in folder name cat.
 command - python Gt_crawl_main_url.py  
 
 Run Gt_redirect_to_mainurl.py having three functions
